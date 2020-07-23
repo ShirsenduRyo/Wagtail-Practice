@@ -6,6 +6,7 @@ from wagtail.core.models import Page
 from wagtail.core.fields import StreamField
 
 from streams import blocks
+
 class FlexPage(Page):
 
     template = "flex/flex_page.html"
@@ -16,6 +17,7 @@ class FlexPage(Page):
         ("full_rich_rext",blocks.RichTextBlock()),
         ("simple_rich_rext",blocks.SimpleRichTextBlock()),
         ("card_block",blocks.CardBlock()),
+        ("cta_block",blocks.CTABlock()),
         ],
         null = True,
         blank = True

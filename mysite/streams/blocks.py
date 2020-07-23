@@ -24,6 +24,11 @@ class CardBlock(blocks.StructBlock):
             ]
         )
     )
+
+    class Meta:
+        template = "streams/card_block.html"
+        icon = "placeholder"
+        label=  "Cards"
     
 
 
@@ -50,3 +55,15 @@ class SimpleRichTextBlock(blocks.RichTextBlock):
         icon = "edit"
         label=  "Simple Richtext"
 
+class CTABlock(blocks.StructBlock):
+    title = blocks.CharBlock(required=True, max_length=60)
+    text = blocks.TextBlock(required=True,features=["bold","italic"])
+    button_page = blocks.PageChooserBlock(required=False)
+    button_url = blocks.URLBlock(required=False)
+    button_text = blocks.CharBlock(required=True,max_length = 40, default=  "Learn More")
+
+    class Meta:
+        template = "streams/cta_block.html"
+        icon = "placeholder"
+        label=  "Call To Action"
+    
